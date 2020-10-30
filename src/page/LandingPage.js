@@ -1,13 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import StartBtn from "../component/StartBtn";
 import { Flower } from "../icon";
 
-export default () => {
+export default withRouter(({ history }) => {
   const onClickStartBtn = () => {
-    console.log("asdf");
+    history.push("/main");
   };
-  
+
   return (
     <Container>
       <div
@@ -21,11 +22,11 @@ export default () => {
       </div>
     </Container>
   );
-};
+});
 
 const Container = styled.div`
   position: absolute;
-  background-color: #00ad93;
+  background-color: #3CB57C;
   display: flex;
   width: 100%;
   height: 100vh;
