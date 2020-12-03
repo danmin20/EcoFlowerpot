@@ -8,7 +8,7 @@ export const tempMarks = [
     label: "100°C",
   },
 ];
-export const lightMarks = [
+export const moistMarks = [
   {
     value: 0,
     label: "0%",
@@ -18,13 +18,23 @@ export const lightMarks = [
     label: "100%",
   },
 ];
-export const waterMarks = [
+export const humidMarks = [
   {
     value: 0,
-    label: "0ml",
+    label: "0%",
   },
   {
     value: 100,
-    label: "100ml",
+    label: "100%",
+  },
+];
+export const intensityMarks = [
+  {
+    value: 0,
+    label: "0%",
+  },
+  {
+    value: 100,
+    label: "100%",
   },
 ];
