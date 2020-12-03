@@ -1,8 +1,9 @@
-import React from "react";
-import { Slider, Typography, Input } from "@material-ui/core";
+import React, { useState } from "react";
+import { Slider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { sliderPost } from "../logic/Post";
 
-export default ({ title, mark }) => {
+export default ({ title, state, mark }) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       width: 300,
@@ -11,44 +12,24 @@ export default ({ title, mark }) => {
       height: theme.spacing(3),
     },
   }));
+
   const classes = useStyles();
 
-  const [value, setValue] = React.useState(0);
-  const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  const handleInputChange = (event) => {
-    setValue(event.target.value === "" ? "" : Number(event.target.value));
-  };
+  const [value, setValue] = useState(state);
+  const handleSliderChange = (_, newValue) => {
+    if (value !== newValue) {
+      setValue(newValue);
 
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
+      sliderPost(newValue, title);
     }
   };
 
   return (
-    <div className={classes.root} style={{ marginTop: "30px" }}>
+    <div className={classes.root} style={{ marginTop: "10px" }}>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Typography id="discrete-slider-custom" gutterBottom>
           {title}
         </Typography>
-        <Input
-          style={{ marginLeft: "10px" }}
-          value={value}
-          margin="dense"
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          inputProps={{
-            step: 10,
-            min: 0,
-            max: 100,
-            type: "number",
-            "aria-labelledby": "input-slider",
-          }}
-        />
       </div>
       <Slider
         value={typeof value === "number" ? value : 0}
