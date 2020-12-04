@@ -6,7 +6,7 @@ import { Wave } from "../component/Wave";
 
 export default withRouter(({ history }) => {
   const onClickStartBtn = () => {
-    history.push("/main");
+    history.push("/list");
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { LandingPage, Main } from "./page";
+import { LandingPage, Main, List } from "./page";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -7,7 +7,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/main" component={Main} />
+        <Route exact path="/list" component={List} />
+        <Route path="/list/:id" component={Main} />
       </Switch>
     </BrowserRouter>
   );

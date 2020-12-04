@@ -11,31 +11,36 @@ import Axios from "axios";
 import CustomSwitch from "../component/CustomSwitch";
 import { CircularProgress } from "@material-ui/core";
 import { WaveBottom } from "../component/Wave";
+import { withRouter } from "react-router-dom";
 
-export default () => {
+export default withRouter(({ history }) => {
   const [data, setData] = useState(null);
 
-  const fetchData = async () => {
-    const { data } = await Axios.get(
-      "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
-      {
-        headers: {
-          "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
-        },
-      }
-    );
-    setData(data.state.reported);
-  };
+  const thingName = history.location.pathname.split("/")[2];
 
   useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await Axios.get(
+        `https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/${thingName}`,
+        {
+          headers: {
+            "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
+          },
+        }
+      );
+      setData(data.state.reported);
+    };
+
     fetchData();
-  }, []);
+  }, [thingName]);
 
   return (
     <Container>
       <WaveBottom />
       {data ? (
         <>
+          <Title>{thingName}</Title>
+
           {/* number */}
           <CustomSlider
             title={"Temperature"}
@@ -84,7 +89,13 @@ export default () => {
       )}
     </Container>
   );
-};
+});
+
+const Title = styled.div`
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-family: "Sansita Swashed", cursive;
+`;
 
 const Container = styled.div`
   position: absolute;
