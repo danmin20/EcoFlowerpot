@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { Flower } from "../assets";
-import Wave from "../component/Wave";
+import { Wave } from "../component/Wave";
 
 export default withRouter(({ history }) => {
   const onClickStartBtn = () => {
@@ -46,14 +46,4 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 5vh;
   align-items: center;
-`;
-
-const Button = styled.div`
-  margin-top: 20px;
-  text-align: center;
-  background-color: #a76f3c;
-  color: white;
-  font-size: 12px;
-  padding: 5px 35px;
-  border-radius: 30px;
 `;

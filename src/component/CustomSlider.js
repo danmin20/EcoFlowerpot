@@ -1,20 +1,34 @@
 import React, { useState } from "react";
-import { Slider, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Slider } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 import { sliderPost } from "../logic/Post";
 
+const CustomizedSlider = withStyles({
+  root: {
+    color: "gray",
+    height: 8,
+    width: 300,
+  },
+  thumb: {
+    height: 20,
+    width: 20,
+    backgroundColor: "#fff",
+    marginTop: -6,
+    "&:focus, &:hover, &$active": {
+      boxShadow: "inherit",
+    },
+  },
+  track: {
+    height: 8,
+    borderRadius: 4,
+  },
+  rail: {
+    height: 8,
+    borderRadius: 4,
+  },
+})(Slider);
+
 export default ({ title, state, mark }) => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: 300,
-    },
-    margin: {
-      height: theme.spacing(3),
-    },
-  }));
-
-  const classes = useStyles();
-
   const [value, setValue] = useState(state);
   const handleSliderChange = (_, newValue) => {
     if (value !== newValue) {
@@ -25,13 +39,11 @@ export default ({ title, state, mark }) => {
   };
 
   return (
-    <div className={classes.root} style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "10px" }}>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Typography id="discrete-slider-custom" gutterBottom>
-          {title}
-        </Typography>
+        <div>{title}</div>
       </div>
-      <Slider
+      <CustomizedSlider
         value={typeof value === "number" ? value : 0}
         onChange={handleSliderChange}
         defaultValue={0}

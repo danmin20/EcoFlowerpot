@@ -8,7 +8,9 @@ import {
 } from "../data/marks";
 import CustomSlider from "../component/CustomSlider";
 import Axios from "axios";
-import CustomizedSwitch from "../component/CustomizedSwitch";
+import CustomSwitch from "../component/CustomSwitch";
+import { CircularProgress } from "@material-ui/core";
+import { WaveBottom } from "../component/Wave";
 
 export default () => {
   const [data, setData] = useState(null);
@@ -31,7 +33,8 @@ export default () => {
 
   return (
     <Container>
-      {data && (
+      <WaveBottom />
+      {data ? (
         <>
           {/* number */}
           <CustomSlider
@@ -67,15 +70,17 @@ export default () => {
             }}
           >
             {/* boolean */}
-            <CustomizedSwitch title={"LED"} state={data.led} />
+            <CustomSwitch title={"LED"} state={data.led} />
 
             {/* boolean */}
-            <CustomizedSwitch title={"Water"} state={data.water} />
+            <CustomSwitch title={"Water"} state={data.water} />
 
             {/* boolean */}
-            <CustomizedSwitch title={"Blind"} state={data.blind} />
+            <CustomSwitch title={"Blind"} state={data.blind} />
           </div>
         </>
+      ) : (
+        <CircularProgress />
       )}
     </Container>
   );
@@ -90,4 +95,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0;
+  background-color: #3cb57c;
+  color: white;
+  font-family: "Cafe24Dangdanghae";
 `;

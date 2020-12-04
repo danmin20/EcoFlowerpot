@@ -1,6 +1,20 @@
-import { Switch, Typography } from "@material-ui/core";
+import { Switch, withStyles } from "@material-ui/core";
 import React, { useState } from "react";
 import { switchPost } from "../logic/Post";
+
+const CustomizedSwitch = withStyles({
+  switchBase: {
+    color: "gray",
+    "&$checked": {
+      color: "white",
+    },
+    "&$checked + $track": {
+      backgroundColor: "white",
+    },
+  },
+  checked: {},
+  track: {},
+})(Switch);
 
 export default ({ title, state }) => {
   const [value, setValue] = useState(state);
@@ -16,10 +30,8 @@ export default ({ title, state }) => {
     <div
       style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
     >
-      <Typography id="discrete-slider-custom" gutterBottom>
-        {title}
-      </Typography>
-      <Switch
+      <div>{title}</div>
+      <CustomizedSwitch
         checked={value}
         onChange={handleChange}
         color="primary"
