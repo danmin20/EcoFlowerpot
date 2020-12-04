@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
-import StartBtn from "../component/StartBtn";
-import { Flower } from "../icon";
+import { Flower } from "../assets";
+import Wave from "../component/Wave";
 
 export default withRouter(({ history }) => {
   const onClickStartBtn = () => {
@@ -10,26 +10,26 @@ export default withRouter(({ history }) => {
   };
 
   return (
-    <Container>
-      <div
-        style={{ marginTop: "300px", alignItems: "center", marginLeft: "25px" }}
-      >
-        <Flower width={"70"} height={"70"} />
-      </div>
-      <Title>Eco Flowerpot</Title>
-      <div style={{ marginTop: "10px" }}>
-        <StartBtn onClick={onClickStartBtn} text={"눌러서 시작하세요"} />
-      </div>
-    </Container>
+    <>
+      <WaveContainer>
+        <Wave />
+      </WaveContainer>
+      <Container>
+        <Flower width={"70"} height={"70"} style={{ marginLeft: "15px" }} />
+        <Title>Eco Flowerpot</Title>
+        <div className="button" onClick={onClickStartBtn}>
+          눌러서 시작하세요
+        </div>
+      </Container>
+    </>
   );
 });
 
-const Container = styled.div`
-  position: absolute;
-  background-color: #3CB57C;
+const WaveContainer = styled.div`
+  background-color: #3cb57c;
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 300px;
   align-items: center;
   flex-direction: column;
   margin: 0;
@@ -37,7 +37,23 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-family: "Sansita Swashed", cursive;
-  color: white;
   font-size: 30px;
   margin-top: -15px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  align-items: center;
+`;
+
+const Button = styled.div`
+  margin-top: 20px;
+  text-align: center;
+  background-color: #a76f3c;
+  color: white;
+  font-size: 12px;
+  padding: 5px 35px;
+  border-radius: 30px;
 `;
