@@ -26,6 +26,7 @@ const CustomizedSlider = withStyles({
     height: 8,
     borderRadius: 4,
   },
+  active: {},
 })(Slider);
 
 export default ({ title, state, mark }) => {
