@@ -42,10 +42,12 @@ export default ({ title, state, mark }) => {
   return (
     <div style={{ marginTop: "10px" }}>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <div>{title}</div>
+        <div>
+          {title} <span style={{ color: "black" }}>{value}</span>
+        </div>
       </div>
       <CustomizedSlider
-        value={typeof value === "number" ? value : 0}
+        value={value}
         onChange={handleSliderChange}
         defaultValue={0}
         aria-labelledby="discrete-slider-custom"

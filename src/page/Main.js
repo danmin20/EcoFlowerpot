@@ -37,7 +37,6 @@ export default withRouter(({ history }) => {
   return (
     <Container>
       <WaveBottom />
-      {console.log("data", data)}
       {data ? (
         <>
           <Title>{thingName}</Title>
@@ -46,7 +45,7 @@ export default withRouter(({ history }) => {
           <CustomSlider
             title={"Temperature"}
             mark={tempMarks}
-            state={data.tempeture}
+            state={data.temperature}
           />
 
           {/* number */}
