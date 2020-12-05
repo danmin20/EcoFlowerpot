@@ -4,7 +4,7 @@ export const tempMarks = [
     label: "0°C",
   },
   {
-    value: 100,
+    value: 40,
     label: "40°C",
   },
 ];

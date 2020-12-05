@@ -34,7 +34,6 @@ export default ({ title, state, mark }) => {
   const handleSliderChange = (_, newValue) => {
     if (value !== newValue) {
       setValue(newValue);
-
       sliderPost(newValue, title);
     }
   };
@@ -54,6 +53,7 @@ export default ({ title, state, mark }) => {
         step={1}
         valueLabelDisplay="auto"
         marks={mark}
+        max={title === "Temperature" ? "40" : "100"}
       />
     </div>
   );
