@@ -53,7 +53,7 @@ export default ({ title, state, mark }) => {
         step={1}
         valueLabelDisplay="auto"
         marks={mark}
-        max={title === "Temperature" ? "40" : "100"}
+        max={title === "Temperature" ? 40 : 100}
       />
     </div>
   );
