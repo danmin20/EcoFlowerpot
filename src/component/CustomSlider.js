@@ -49,7 +49,7 @@ export default ({ title, state, mark }) => {
         onChange={handleSliderChange}
         defaultValue={0}
         aria-labelledby="discrete-slider-custom"
-        step={10}
+        step={1}
         valueLabelDisplay="auto"
         marks={mark}
       />

@@ -37,6 +37,7 @@ export default withRouter(({ history }) => {
   return (
     <Container>
       <WaveBottom />
+      {console.log("data", data)}
       {data ? (
         <>
           <Title>{thingName}</Title>

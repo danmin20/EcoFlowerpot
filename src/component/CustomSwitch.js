@@ -21,9 +21,9 @@ export default ({ title, state }) => {
 
   const handleChange = (event) => {
     event.persist();
-    setValue(event.target.checked);
+    setValue(!value);
 
-    switchPost(value, title);
+    switchPost(!value, title);
   };
 
   return (
@@ -34,7 +34,6 @@ export default ({ title, state }) => {
       <CustomizedSwitch
         checked={value}
         onChange={handleChange}
-        color="primary"
         inputProps={{ "aria-label": "primary checkbox" }}
       />
     </div>

@@ -5,7 +5,7 @@ export const tempMarks = [
   },
   {
     value: 100,
-    label: "100°C",
+    label: "40°C",
   },
 ];
 export const moistMarks = [
