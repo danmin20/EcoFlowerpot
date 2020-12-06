@@ -117,7 +117,7 @@ export const switchPost = (value, title) => {
       );
       break;
 
-    case "Blind":
+    case "Fan":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
         {

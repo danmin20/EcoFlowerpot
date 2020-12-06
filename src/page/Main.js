@@ -144,7 +144,7 @@ export default withRouter(({ history }) => {
             <CustomSwitch title={"Water"} state={data.water} />
 
             {/* boolean */}
-            <CustomSwitch title={"Blind"} state={data.blind} />
+            <CustomSwitch title={"Fan"} state={data.blind} />
           </div>
         </>
       ) : (
