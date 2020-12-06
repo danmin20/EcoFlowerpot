@@ -9,9 +9,9 @@ import {
 import CustomSlider from "../component/CustomSlider";
 import Axios from "axios";
 import CustomSwitch from "../component/CustomSwitch";
-import { CircularProgress } from "@material-ui/core";
 import { WaveBottom } from "../component/Wave";
 import { withRouter } from "react-router-dom";
+import CustomLoader from "../component/CustomLoader";
 
 export default withRouter(({ history }) => {
   const [data, setData] = useState(null);
@@ -85,7 +85,7 @@ export default withRouter(({ history }) => {
           </div>
         </>
       ) : (
-        <CircularProgress />
+        <CustomLoader />
       )}
     </Container>
   );

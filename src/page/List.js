@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Axios from "axios";
-import { CircularProgress } from "@material-ui/core";
 import { WaveBottom } from "../component/Wave";
 import { withRouter } from "react-router-dom";
+import CustomLoader from "../component/CustomLoader";
 
 export default withRouter(({ history }) => {
   const [data, setData] = useState(null);
@@ -42,7 +42,7 @@ export default withRouter(({ history }) => {
           </List>
         </>
       ) : (
-        <CircularProgress />
+        <CustomLoader />
       )}
     </Container>
   );
