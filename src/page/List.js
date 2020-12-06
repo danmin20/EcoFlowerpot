@@ -81,4 +81,5 @@ const ItemBox = styled.div`
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 `;

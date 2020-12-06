@@ -17,8 +17,9 @@ export const sliderPost = (newValue, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     case "Soil Moisture":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
@@ -34,8 +35,9 @@ export const sliderPost = (newValue, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     case "Humidity":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
@@ -51,9 +53,10 @@ export const sliderPost = (newValue, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
-    case "Intentisy":
+
+    case "Intensity":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
         {
@@ -68,8 +71,9 @@ export const sliderPost = (newValue, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     default:
       break;
   }
@@ -92,8 +96,9 @@ export const switchPost = (value, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     case "Water":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
@@ -109,8 +114,9 @@ export const switchPost = (value, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     case "Blind":
       Axios.post(
         "https://vgaf0jz45m.execute-api.us-east-1.amazonaws.com/beta/RPiTest",
@@ -126,8 +132,9 @@ export const switchPost = (value, title) => {
             "x-api-key": "lC399ZhAd42s3FyYugZuy94bDv6vtCCsxMLHOy2f",
           },
         }
-      ).then((res) => console.log("res", res));
+      );
       break;
+
     default:
       break;
   }
